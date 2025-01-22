@@ -59,16 +59,16 @@ char game_state(char game[][3]){
     for(int i=0; i<2; i++)
         {
         if(i==1)
-            check_for=""O";
+            check_for="O";
             
         #check vertical
-        bool vert= vertical(game)
+        bool vert= check_result(game, vertical)
     
         #check horizontal
-        bool hor=horizontal(game)
+        bool hor=check_result(game, horizontal)
         
         #check diagonal
-        bool dia=diagonal(game)
+        bool dia=check_result(game,diagonal)
 
         if(ver || hor || dia)
             return check_for;
