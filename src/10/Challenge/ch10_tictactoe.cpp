@@ -34,13 +34,10 @@ void ask_for_move(char game[][3], char mark){
 //           mark: The AI's mark: 'X' or 'O'.
 // Returns: Nothing.
 
-#define TWO_PLAYERS
 void make_move(char game[][3], char mark){ 
     #ifdef TWO_PLAYERS
     ask_for_move(game,mark);
     #else
-    
-    // Write your code here and comment out the definition of TWO_PLAYERS above
 
     #endif
     return;
@@ -57,9 +54,31 @@ void make_move(char game[][3], char mark){
 //                                  't': A tie.
 char game_state(char game[][3]){
 
-    // Write your code here
+    char state;
+    char check_for="X";
+    for(int i=0; i<2; i++)
+        {
+        if(i==1)
+            check_for=""O";
+            
+        #check vertical
+        bool vert= vertical(game)
+    
+        #check horizontal
+        bool hor=horizontal(game)
+        
+        #check diagonal
+        bool dia=diagonal(game)
 
-    return 'a';
+        if(ver || hor || dia)
+            return check_for;
+        }
+         
+    #check empty space
+    if(checkEmpty(game))
+        return 'a';
+    else
+        return 't';
 }
 
 // print_game()
